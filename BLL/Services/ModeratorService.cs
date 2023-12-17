@@ -54,5 +54,52 @@ namespace BLL.Services
 
         }
 
+        public static MAttendanceReportDTO GetWithAttenden(int id) 
+        {
+
+            var data = DataAccessFactory.ModeratorData().Read(id);
+            var cfg = new MapperConfiguration(c =>
+            {
+                c.CreateMap<Moderator , MAttendanceReportDTO>();
+                c.CreateMap<AttendanceReport , AttendanceReportDTO>();
+            });
+            var mapper = new Mapper(cfg);
+            var mapped = mapper.Map<MAttendanceReportDTO>(data);
+            return mapped;
+        }
+
+        public static bool Create(ModeratorDTO moderator)
+        {
+            var config = new MapperConfiguration(c =>
+            {
+                c.CreateMap<ModeratorDTO, Moderator>();
+            });
+
+            var mapper = new Mapper(config);
+            var mapped = mapper.Map<Moderator>(moderator);
+            var res = DataAccessFactory.ModeratorData().Create(mapped);
+            if (res) return true;
+            return false;
+        }
+
+        public static bool Update(ModeratorDTO moderator)
+        {
+            var config = new MapperConfiguration(c =>
+            {
+                c.CreateMap<ModeratorDTO, Moderator>();
+            });
+
+            var mapper = new Mapper(config);
+            var mapped = mapper.Map<Moderator>(moderator);
+            var res = DataAccessFactory.ModeratorData().Update(mapped);
+            if (res) return true;
+            return false;
+        }
+
+        public static bool Delete(int id)
+        {
+            return DataAccessFactory.ModeratorData().Delete(id);
+        }
+
     }
 }

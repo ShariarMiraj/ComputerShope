@@ -92,6 +92,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Controllers\AttendanceReportController.cs" />
     <Compile Include="Controllers\ModeratorController.cs" />
     <Compile Include="Controllers\SalaryController.cs" />
     <Compile Include="Global.asax.cs">

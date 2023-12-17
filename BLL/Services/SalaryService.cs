@@ -38,5 +38,40 @@ namespace BLL.Services
             var mapped = mapper.Map<SalaryDTO>(data);
             return mapped;
         }
+
+
+        public static bool Create(SalaryDTO salary)
+        {
+            var config = new MapperConfiguration(c =>
+            {
+                c.CreateMap<SalaryDTO , Salary>();
+            });
+
+            var mapper = new Mapper (config);
+            var mapped = mapper.Map<Salary>(salary);
+            var res = DataAccessFactory.SalaryData().Create(mapped);
+            if (res) return true;
+            return false;
+        }
+
+        public static bool Update(SalaryDTO salary)
+        {
+            var config = new MapperConfiguration(c =>
+            {
+                c.CreateMap<SalaryDTO, Salary>();
+            });
+            var mapper = new Mapper (config);
+            var mapped = mapper.Map<Salary>(salary);
+            var res = DataAccessFactory.SalaryData().Update(mapped);
+            if (res) return true;
+            return false;
+
+        }
+
+
+        public static bool Delete(int id)
+        {
+            return DataAccessFactory.SalaryData().Delete(id);
+        }
     }
 }
