@@ -19,7 +19,7 @@
             //  You can use the DbSet<T>.AddOrUpdate() helper extension method
             //  to avoid creating duplicate seed data.
 
-            Random random = new Random();
+            /*Random random = new Random();
             for (int i = 1; i <= 10; i++)
             {
                 context.Moderators.AddOrUpdate(new Models.Moderator
@@ -54,7 +54,7 @@
                     DateTime = DateTime.Now,
                     MId = random.Next(1, 11),
                 });
-            }
+            }*/
 
         }
     }

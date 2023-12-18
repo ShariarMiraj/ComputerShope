@@ -25,5 +25,16 @@ namespace DAL
         {
             return new AttendanceReportRepo();
         }
+
+       public static IAuth<bool> AuthData()
+        {
+            return new ModeratorRepo();
+        }
+
+        public static IRepo<Token, string, Token> TokenData()
+        {
+            return new TokenRepo();
+        }
+
     }
 }

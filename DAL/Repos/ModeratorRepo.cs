@@ -8,8 +8,16 @@ using System.Threading.Tasks;
 
 namespace DAL.Repos
 {
-    internal class ModeratorRepo : Repo, IRepo<Moderator, int, bool>
+    internal class ModeratorRepo : Repo, IRepo<Moderator, int, bool> , IAuth<bool>
     {
+        public bool Authenticate(string email, string password)
+        {
+            var data = db.Moderators.FirstOrDefault(u=>u.Email.Equals(email) &&
+            u.Password.Equals(password));
+            if (data != null) return true;
+            return false;
+        }
+
         public bool Create(Moderator obj)
         {
            db.Moderators.Add(obj);

@@ -28,7 +28,7 @@ namespace ComputerShope.Controllers
         }
 
         [HttpGet]
-        [Route("api/AttendanceReport/{id}")]
+        [Route("api/Attendance/{id}")]
 
         public HttpResponseMessage AttendanceReports(int id )
         {

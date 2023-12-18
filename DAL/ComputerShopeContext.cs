@@ -15,5 +15,7 @@ namespace DAL
         public DbSet<Salary> Salaris { get; set; }
 
         public DbSet<AttendanceReport> AttendanceReports { get; set; }
+
+        public DbSet<Token> Tokens { get; set; }
     }
 }
