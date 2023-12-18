@@ -38,7 +38,40 @@ namespace BLL.Services
         }
 
 
+        public static bool Create(AttendanceReportDTO attendanceReport)
+        {
+            var config = new MapperConfiguration(c =>
+            {
+                c.CreateMap<AttendanceReportDTO, AttendanceReport>();
+            });
 
+            var mapper = new Mapper(config);
+            var mapped = mapper.Map<AttendanceReport>(attendanceReport);
+            var res = DataAccessFactory.AttendanceReportData().Create(mapped);
+            if (res) return true;
+            return false;
+        }
+
+
+        public static bool Upadte(AttendanceReportDTO attendanceReport)
+        {
+            var config = new MapperConfiguration(c =>
+            {
+                c.CreateMap<AttendanceReportDTO, AttendanceReport>();
+            });
+
+            var mapper = new Mapper(config);
+            var mapped = mapper.Map<AttendanceReport>(attendanceReport);
+            var res = DataAccessFactory.AttendanceReportData().Update(mapped);
+            if (res) return true;
+            return false;
+        }
+
+
+        public static bool Delete(int id)
+        {
+            return DataAccessFactory.AttendanceReportData().Delete(id);
+        }
 
     }
 }
