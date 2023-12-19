@@ -1,5 +1,6 @@
 ﻿using BLL.DTOs;
 using BLL.Services;
+using ComputerShope.Auth;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -45,7 +46,7 @@ namespace ComputerShope.Controllers
                 return Request.CreateResponse(HttpStatusCode.InternalServerError, new { Message = ex.Message });
             }
         }
-
+        [Logged]
         [HttpGet]
         [Route("api/Moderator/{id}/salary")]
         public HttpResponseMessage MSalary(int id)
@@ -61,6 +62,7 @@ namespace ComputerShope.Controllers
             }
         }
 
+        [Logged]
         [HttpGet]
         [Route("api/Moderator/{id}/AttendanceReport")]
         public HttpResponseMessage MAttendanceReport(int id)
