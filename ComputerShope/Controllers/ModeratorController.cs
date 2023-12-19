@@ -146,5 +146,30 @@ namespace ComputerShope.Controllers
 
             }
         }
+
+
+        [HttpPost]
+        [Route("api/Moderator/change-password/{Id}")]
+
+        public HttpResponseMessage ChangePassword(int  Id, ChangePasswordDTO changePassword)
+        {
+            var moderator = ModeratorService.Get(Id);
+            if (moderator != null)
+            {
+                try
+                {
+                    var res = ModeratorService.ChangePassword(Id, changePassword);
+                    return Request.CreateResponse(HttpStatusCode.OK, res);
+                }
+                catch (Exception ex) 
+                {
+                    return Request.CreateResponse(HttpStatusCode.BadRequest , ex.Message);
+                }
+            }
+            else
+            {
+                return Request.CreateResponse(HttpStatusCode.NotFound);
+            }
+        }
     }
 }

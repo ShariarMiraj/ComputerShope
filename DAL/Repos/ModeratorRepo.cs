@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace DAL.Repos
 {
-    internal class ModeratorRepo : Repo, IRepo<Moderator, int, bool> , IAuth<bool>
+    internal class ModeratorRepo : Repo, IRepo<Moderator, int, bool> , IAuth<bool>  , IChange
     {
         public bool Authenticate(string email, string password)
         {
@@ -16,6 +16,13 @@ namespace DAL.Repos
             u.Password.Equals(password));
             if (data != null) return true;
             return false;
+        }
+
+        public bool ChangePassword(int Id, string password)
+        {
+            var moderator = Read(Id);
+            moderator.Password = password;
+            return db.SaveChanges() > 0;
         }
 
         public bool Create(Moderator obj)

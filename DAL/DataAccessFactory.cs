@@ -36,5 +36,10 @@ namespace DAL
             return new TokenRepo();
         }
 
+        public static IChange ChangePassData()
+        {
+            return new ModeratorRepo();
+        }
+
     }
 }

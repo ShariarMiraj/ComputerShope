@@ -101,5 +101,16 @@ namespace BLL.Services
             return DataAccessFactory.ModeratorData().Delete(id);
         }
 
+
+        public static bool ChangePassword(int id, ChangePasswordDTO changePasswordDTO)
+
+        {
+            var moderator = DataAccessFactory.ModeratorData().Read(id);
+            if ( changePasswordDTO.CurrentPassword == moderator.Password)
+            {
+                return DataAccessFactory.ChangePassData().ChangePassword(moderator.Id , changePasswordDTO.Password);
+            }
+            return false;
+        }
     }
 }
