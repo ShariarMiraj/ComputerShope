@@ -7,6 +7,7 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
+using System.Xml.Linq;
 
 namespace ComputerShope.Controllers
 {
@@ -159,7 +160,8 @@ namespace ComputerShope.Controllers
                 try
                 {
                     var res = ModeratorService.ChangePassword(Id, changePassword);
-                    return Request.CreateResponse(HttpStatusCode.OK, res);
+                    return Request.CreateResponse(HttpStatusCode.OK, EmailService.SendEmail(Id));
+                    //return Request.CreateResponse(HttpStatusCode.OK, res);
                 }
                 catch (Exception ex) 
                 {
@@ -169,6 +171,23 @@ namespace ComputerShope.Controllers
             else
             {
                 return Request.CreateResponse(HttpStatusCode.NotFound);
+            }
+        }
+
+        [HttpPost]
+        [Route("api/teacher/mail/{id}")]
+        public HttpResponseMessage Mail(int Id)
+        {
+            try
+            {
+
+                return Request.CreateResponse(HttpStatusCode.OK, EmailService.SendEmail(Id));
+            }
+            catch (Exception ex)
+            {
+
+                return Request.CreateResponse(HttpStatusCode.BadRequest, ex.Message);
+
             }
         }
     }
