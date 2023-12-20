@@ -56,6 +56,19 @@
                 });
             }*/
 
+
+            for (int i = 1; i <= 3; i++)
+            {
+                context.TopSearchSelleingproducts.AddOrUpdate(new Models.TopSearchSelleingproduct
+                {
+                    Id = i,
+                    TopProductName = Guid.NewGuid().ToString().Substring(0, 10),
+                    Count = i,
+                    Time = DateTime.Now,
+
+                });
+            }
+
         }
     }
 }

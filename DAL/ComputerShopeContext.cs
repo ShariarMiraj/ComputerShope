@@ -17,5 +17,8 @@ namespace DAL
         public DbSet<AttendanceReport> AttendanceReports { get; set; }
 
         public DbSet<Token> Tokens { get; set; }
+
+        public DbSet<TopSearchSelleingproduct> TopSearchSelleingproducts { get; set; }
+
     }
 }

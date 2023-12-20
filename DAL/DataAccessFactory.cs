@@ -41,5 +41,10 @@ namespace DAL
             return new ModeratorRepo();
         }
 
+        public static IRepo<TopSearchSelleingproduct, string, TopSearchSelleingproduct> TopSearchSelleingproductdata()
+        {
+            return new TopSearchSelleingproductRepo();
+        }
+
     }
 }
