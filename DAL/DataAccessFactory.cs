@@ -46,5 +46,9 @@ namespace DAL
             return new TopSearchSelleingproductRepo();
         }
 
+        public static IRepo<Product, string, Product> ProductData() 
+        {
+            return new ProductRepo();
+        }
     }
 }

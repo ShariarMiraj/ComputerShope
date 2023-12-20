@@ -11,9 +11,10 @@ namespace ComputerShope.Controllers
 {
     public class TopSearchSelleingproductController : ApiController
     {
+
         [HttpGet]
-        [Route("api/TSelleingProduct")]
-        public HttpResponseMessage TSelleingProducts()
+        [Route("api/search")]
+        public HttpResponseMessage Get()
         {
             try
             {
@@ -24,17 +25,17 @@ namespace ComputerShope.Controllers
             {
                 return Request.CreateResponse(HttpStatusCode.BadRequest, ex.Message);
             }
+
         }
 
-
-        /*[HttpGet]
+        [HttpGet]
         [Route("api/search/{product}")]
-        public HttpResponseMessage Get(string product)
+        public HttpResponseMessage Get(string course)
         {
             try
             {
 
-                return Request.CreateResponse(HttpStatusCode.OK, TSProducRepoService.Get(product));
+                return Request.CreateResponse(HttpStatusCode.OK, ProductService.Get(course));
             }
             catch (Exception ex)
             {
@@ -42,10 +43,11 @@ namespace ComputerShope.Controllers
                 return Request.CreateResponse(HttpStatusCode.BadRequest, ex.Message);
 
             }
-        }*/
+        }
+
 
         [HttpPost]
-        [Route("api/TSelleingProduct/add")]
+        [Route("api/Search/add")]
         public HttpResponseMessage Add(TopSearchSelleingproductDTO obj)
         {
             try
@@ -66,7 +68,6 @@ namespace ComputerShope.Controllers
                 return Request.CreateResponse(HttpStatusCode.InternalServerError, new { Msg = ex.Message, Data = obj });
             }
         }
-
 
     }
 }

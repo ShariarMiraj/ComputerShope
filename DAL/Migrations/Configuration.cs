@@ -54,7 +54,7 @@
                     DateTime = DateTime.Now,
                     MId = random.Next(1, 11),
                 });
-            }*/
+            }
 
 
             for (int i = 1; i <= 3; i++)
@@ -66,6 +66,20 @@
                     Count = i,
                     Time = DateTime.Now,
 
+                });
+            }*/
+
+            Random random = new Random();
+            for (int i = 1; i <= 10; i++)
+            {
+                context.Products.AddOrUpdate(new Models.Product
+                {
+                    Id = i,
+                    ProductName = Guid.NewGuid().ToString().Substring(0, 10),
+                    ProdcutQuantity = random.Next(100, 500),
+                    ProductCategory = Guid.NewGuid().ToString().Substring(0, 10),
+                    ProductPrice = random.Next(10000, 50000),
+                   
                 });
             }
 

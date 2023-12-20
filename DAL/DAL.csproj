@@ -81,15 +81,21 @@
     <Compile Include="Migrations\202312201638113_TopSrch.designer.cs">
       <DependentUpon>202312201638113_TopSrch.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202312201714206_AddProducttb.cs" />
+    <Compile Include="Migrations\202312201714206_AddProducttb.designer.cs">
+      <DependentUpon>202312201714206_AddProducttb.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AttendanceReport.cs" />
     <Compile Include="Models\Moderator.cs" />
+    <Compile Include="Models\Product.cs" />
     <Compile Include="Models\Salary.cs" />
     <Compile Include="Models\Token.cs" />
     <Compile Include="Models\TopSearchSelleingproduct.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repos\AttendanceReportRepo.cs" />
     <Compile Include="Repos\ModeratorRepo.cs" />
+    <Compile Include="Repos\ProductRepo.cs" />
     <Compile Include="Repos\Repo.cs" />
     <Compile Include="Repos\SalaryRepo.cs" />
     <Compile Include="Repos\TokenRepo.cs" />
@@ -117,6 +123,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202312201638113_TopSrch.resx">
       <DependentUpon>202312201638113_TopSrch.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202312201714206_AddProducttb.resx">
+      <DependentUpon>202312201714206_AddProducttb.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

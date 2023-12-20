@@ -10,6 +10,8 @@ namespace DAL.Repos
 {
     internal class TopSearchSelleingproductRepo : Repo, IRepo<TopSearchSelleingproduct, string, TopSearchSelleingproduct>
     {
+
+
         public TopSearchSelleingproduct Create(TopSearchSelleingproduct obj)
         {
             var match = db.TopSearchSelleingproducts.Count(c => c.TopProductName == obj.TopProductName);
@@ -53,12 +55,10 @@ namespace DAL.Repos
 
         public TopSearchSelleingproduct Update(TopSearchSelleingproduct obj)
         {
-            throw new NotImplementedException();
-
-            /*var exdata = db.Salaris.Find(obj.Id);
+            var exdata = db.Products.Find(obj.Id);
             db.Entry(exdata).CurrentValues.SetValues(obj);
             if (db.SaveChanges() > 0) return obj;
-            return null;*/
+            return null;
         }
     }
 }

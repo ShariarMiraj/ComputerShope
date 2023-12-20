@@ -24,6 +24,8 @@ namespace BLL.Services
             return mapped;
         }
 
+
+
         public static TopSearchSelleingproductDTO Get(string id)
         {
             var data = DataAccessFactory.TopSearchSelleingproductdata().Read(id);
@@ -35,6 +37,7 @@ namespace BLL.Services
             var mapped = mapper.Map<TopSearchSelleingproductDTO>(data);
             return mapped;
         }
+
 
 
         public static bool Create(TopSearchSelleingproductDTO search)
@@ -49,25 +52,6 @@ namespace BLL.Services
             if (res != null) return true;
             return false;
         }
-
-        public static TopSearchSelleingproduct Update(TopSearchSelleingproductDTO tSelleingProduct)
-        {
-            var cfg = new MapperConfiguration(c =>
-            {
-                c.CreateMap<TopSearchSelleingproductDTO, TopSearchSelleingproduct>();
-            });
-
-            var mapper = new Mapper(cfg);
-            var mapped = mapper.Map<TopSearchSelleingproduct>(tSelleingProduct);
-            var res = DataAccessFactory.TopSearchSelleingproductdata().Update(mapped);
-            return mapped;
-        }
-
-        public static bool Delete(string TopProductName)
-        {
-            return DataAccessFactory.TopSearchSelleingproductdata().Delete(TopProductName);
-        }
-
 
     }
 }
