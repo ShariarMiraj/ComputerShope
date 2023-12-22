@@ -21,5 +21,6 @@ namespace DAL.Models
         public int ProductPrice { get; set; }
         [Required]
         public int ProdcutQuantity { get; set; }
+
     }
 }

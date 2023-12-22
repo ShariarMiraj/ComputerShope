@@ -48,10 +48,12 @@
     <Compile Include="Class1.cs" />
     <Compile Include="DTOs\AttendanceReportDTO.cs" />
     <Compile Include="DTOs\ChangePasswordDTO.cs" />
+    <Compile Include="DTOs\FeedBackDTO.cs" />
     <Compile Include="DTOs\MAttendanceReportDTO.cs" />
     <Compile Include="DTOs\ModeratorDTO.cs" />
     <Compile Include="DTOs\MSalaryDTO.cs" />
     <Compile Include="DTOs\ProductDTO.cs" />
+    <Compile Include="DTOs\ReviewDTO.cs" />
     <Compile Include="DTOs\SalaryDTO.cs" />
     <Compile Include="DTOs\TokenDTO.cs" />
     <Compile Include="DTOs\TopSearchSelleingproductDTO.cs" />
@@ -59,8 +61,10 @@
     <Compile Include="Services\AttendanceReportService.cs" />
     <Compile Include="Services\AuthService.cs" />
     <Compile Include="Services\EmailService.cs" />
+    <Compile Include="Services\FeedBackService.cs" />
     <Compile Include="Services\ModeratorService.cs" />
     <Compile Include="Services\ProductService.cs" />
+    <Compile Include="Services\ReviewService.cs" />
     <Compile Include="Services\SalaryService.cs" />
     <Compile Include="Services\TopSearchSelleingproductService.cs" />
   </ItemGroup>

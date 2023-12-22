@@ -95,7 +95,9 @@
     <Compile Include="Auth\Logged.cs" />
     <Compile Include="Controllers\AttendanceReportController.cs" />
     <Compile Include="Controllers\AuthController.cs" />
+    <Compile Include="Controllers\FeedBackController.cs" />
     <Compile Include="Controllers\ModeratorController.cs" />
+    <Compile Include="Controllers\ReviewController.cs" />
     <Compile Include="Controllers\SalaryController.cs" />
     <Compile Include="Controllers\TopSearchSelleingproductController.cs" />
     <Compile Include="Global.asax.cs">

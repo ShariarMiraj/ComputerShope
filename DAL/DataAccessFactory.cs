@@ -50,5 +50,15 @@ namespace DAL
         {
             return new ProductRepo();
         }
+
+        public static IRepo<Review , int, bool> ReviewData() 
+        {
+            return new ReviewRepo();
+        }
+
+        public static IRepo<FeedBack, int , bool> FeedBackData() 
+        {
+            return new FeedBackRepo();
+        }
     }
 }
