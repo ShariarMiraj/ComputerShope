@@ -81,18 +81,25 @@
                    ProductPrice = random.Next(10000, 50000),
 
                });
-           }*/
+           }
 
-            for (int i = 1; i <= 50; i++)
+
+           
+
+            
+
+            for (int i = 0; i < 50; i++) 
             {
                 context.Reviews.AddOrUpdate(new Models.Review
                 {
                     Id = i,
-                    review = Guid.NewGuid().ToString().Substring(0, 10),
+                    ReviewDatas = Guid.NewGuid().ToString().Substring(0, 30),
                     Date = DateTime.Now,
-                    Pid = random.Next(1, 9),
+                    Pid = random.Next(1,9),
+
                 });
-            }
+            }*/
+
 
             for (int i = 1; i <= 50; i++)
             {

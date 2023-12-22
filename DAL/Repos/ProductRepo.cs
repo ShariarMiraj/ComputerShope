@@ -8,21 +8,19 @@ using System.Threading.Tasks;
 
 namespace DAL.Repos
 {
-    internal class ProductRepo : Repo, IRepo<Product, string, Product>
+    internal class ProductRepo : Repo, IRepo<Product, int, bool>
     {
-
-        public Product Create(Product obj)
+        public bool Create(Product obj)
         {
             db.Products.Add(obj);
-            if (db.SaveChanges() > 0) return obj;
-            return null;
+            if (db.SaveChanges() > 0) return true;
+            return false;
         }
 
-        public bool Delete(string product)
+        public bool Delete(int id)
         {
-
-            var data = Read(product);
-            db.Products.Remove(data);
+            var ex = Read(id);
+            db.Products.Remove(ex);
             return db.SaveChanges() > 0;
         }
 
@@ -31,17 +29,18 @@ namespace DAL.Repos
             return db.Products.ToList();
         }
 
-        public Product Read(string product)
+        public Product Read(int id)
         {
-            return db.Products.FirstOrDefault(c => c.ProductName == product);
+            return db.Products.Find(id);
         }
 
-        public Product Update(Product obj)
+        public bool Update(Product obj)
         {
-            var exdata = db.Products.Find(obj.Id);
-            db.Entry(exdata).CurrentValues.SetValues(obj);
-            if (db.SaveChanges() > 0) return obj;
-            return null;
+            var ex = Read(obj.Id);
+            db.Entry(ex).CurrentValues.SetValues(obj);
+            if (db.SaveChanges() > 0)
+                return true;
+            return false;
         }
     }
 }

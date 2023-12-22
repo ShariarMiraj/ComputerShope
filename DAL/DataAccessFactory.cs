@@ -4,6 +4,7 @@ using DAL.Repos;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.InteropServices.WindowsRuntime;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -46,12 +47,13 @@ namespace DAL
             return new TopSearchSelleingproductRepo();
         }
 
-        public static IRepo<Product, string, Product> ProductData() 
+        public static IRepo<Product, int , bool> ProductData() 
         {
             return new ProductRepo();
         }
 
-        public static IRepo<Review , int, bool> ReviewData() 
+
+        public static IRepo<Review, int, bool> ReviewData()
         {
             return new ReviewRepo();
         }

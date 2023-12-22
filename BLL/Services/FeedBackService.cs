@@ -12,7 +12,7 @@ namespace BLL.Services
 {
     public  class FeedBackService
     {
-        public static List<FeedBackDTO> Get()
+       public static List<FeedBackDTO> Get()
         {
             var data = DataAccessFactory.FeedBackData().Read();
             var cfg = new MapperConfiguration(c =>
@@ -70,6 +70,22 @@ namespace BLL.Services
         public static bool Delete(int Rid)
         {
             return DataAccessFactory.FeedBackData().Delete(Rid);
+        }
+
+
+        public static ReviewFeedBackDTO ReviewFeedBAck(int id)
+        {
+            var data = DataAccessFactory.ReviewData().Read(id);
+            var cfg = new MapperConfiguration(c =>
+            {
+                c.CreateMap<Review, ReviewFeedBackDTO>();
+                c.CreateMap<FeedBack, FeedBackDTO>();
+                
+            });
+            var mapper = new Mapper(cfg);
+            var mapped = mapper.Map<ReviewFeedBackDTO>(data);
+            return mapped;
+
         }
 
     }

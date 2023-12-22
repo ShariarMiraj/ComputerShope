@@ -89,9 +89,25 @@
     <Compile Include="Migrations\202312221332171_InitFR.designer.cs">
       <DependentUpon>202312221332171_InitFR.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202312221335337_FeeReAG.cs" />
-    <Compile Include="Migrations\202312221335337_FeeReAG.designer.cs">
-      <DependentUpon>202312221335337_FeeReAG.cs</DependentUpon>
+    <Compile Include="Migrations\202312221833467_FeRe25.cs" />
+    <Compile Include="Migrations\202312221833467_FeRe25.designer.cs">
+      <DependentUpon>202312221833467_FeRe25.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202312221839256_Addre.cs" />
+    <Compile Include="Migrations\202312221839256_Addre.designer.cs">
+      <DependentUpon>202312221839256_Addre.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202312221856507_delFed.cs" />
+    <Compile Include="Migrations\202312221856507_delFed.designer.cs">
+      <DependentUpon>202312221856507_delFed.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202312221859132_AddFeedAg.cs" />
+    <Compile Include="Migrations\202312221859132_AddFeedAg.designer.cs">
+      <DependentUpon>202312221859132_AddFeedAg.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202312221926261_AddProductICol.cs" />
+    <Compile Include="Migrations\202312221926261_AddProductICol.designer.cs">
+      <DependentUpon>202312221926261_AddProductICol.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AttendanceReport.cs" />
@@ -142,8 +158,20 @@
     <EmbeddedResource Include="Migrations\202312221332171_InitFR.resx">
       <DependentUpon>202312221332171_InitFR.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202312221335337_FeeReAG.resx">
-      <DependentUpon>202312221335337_FeeReAG.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202312221833467_FeRe25.resx">
+      <DependentUpon>202312221833467_FeRe25.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202312221839256_Addre.resx">
+      <DependentUpon>202312221839256_Addre.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202312221856507_delFed.resx">
+      <DependentUpon>202312221856507_delFed.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202312221859132_AddFeedAg.resx">
+      <DependentUpon>202312221859132_AddFeedAg.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202312221926261_AddProductICol.resx">
+      <DependentUpon>202312221926261_AddProductICol.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

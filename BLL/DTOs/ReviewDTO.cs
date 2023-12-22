@@ -12,10 +12,9 @@ namespace BLL.DTOs
     {
         public int Id { get; set; }
         [Required]
-        public string review { get; set; }
+        public string ReviewDatas { get; set; }
+        public DateTime Date { get; set; }
         [Required]
-        public DateTime date { get; set; }
-       
         public int Pid { get; set; }
     }
 }

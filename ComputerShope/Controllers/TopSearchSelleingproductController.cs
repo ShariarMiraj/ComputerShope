@@ -30,7 +30,7 @@ namespace ComputerShope.Controllers
 
         [HttpGet]
         [Route("api/search/{product}")]
-        public HttpResponseMessage Get(string course)
+        public HttpResponseMessage Get(int course)
         {
             try
             {

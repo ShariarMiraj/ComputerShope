@@ -24,7 +24,7 @@ namespace BLL.Services
             return mapped;
         }
 
-        public static ProductDTO Get(string course)
+        public static ProductDTO Get(int  course)
         {
             var data = DataAccessFactory.ProductData().Read(course);
             var config = new MapperConfiguration(c =>
@@ -45,7 +45,7 @@ namespace BLL.Services
             var mapper = new Mapper(config);
             var mapped = mapper.Map<Product>(course);
             var res = DataAccessFactory.ProductData().Create(mapped);
-            if (res != null) return true;
+            if (res ) return true;
             return false;
         }
 
@@ -59,17 +59,32 @@ namespace BLL.Services
             var mapper = new Mapper(config);
             var mapped = mapper.Map<Product>(course);
             var res = DataAccessFactory.ProductData().Update(mapped);
-            if (res != null) return true;
+            if (res ) return true;
             return false;
         }
 
 
-        public static bool Delete(string id)
+        public static bool Delete(int  id)
         {
             return DataAccessFactory.ProductData().Delete(id);
         }
 
-       
+        public static ProductReviewDTO GetReView(int id)
+        {
+            var data = DataAccessFactory.ProductData().Read(id);
+            var cfg = new MapperConfiguration(c =>
+            {
+                c.CreateMap<Product, ProductReviewDTO>();
+                c.CreateMap<Review, ReviewDTO>();
+
+            });
+
+            var mapper = new Mapper(cfg);
+            var mapped = mapper.Map<ProductReviewDTO>(data);
+            return mapped;
+        }
+
+
 
     }
 }

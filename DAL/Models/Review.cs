@@ -10,27 +10,20 @@ namespace DAL.Models
 {
     public  class Review
     {
-
-        [Key]
         public int Id { get; set; }
         [Required]
-        public string review { get; set; }
-        [Required]
+        public string ReviewDatas { get; set; }
         public DateTime Date { get; set; }
-       
+        [Required]
+        [ForeignKey("Product")]
         public int Pid { get; set; }
-        [ForeignKey("Pid")]
-        public Product product { get; set; }
 
+        public virtual Product Product { get; set; }
 
+       public virtual ICollection<FeedBack> FeedBacks { get; set;}
 
-        public virtual ICollection<FeedBack> FeedBacks { get; set; }
-
-     
-
-        public Review()
+        public Review() 
         {
-           
             FeedBacks = new List<FeedBack>();
         }
     }

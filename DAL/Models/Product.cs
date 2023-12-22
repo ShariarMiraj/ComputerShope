@@ -22,5 +22,12 @@ namespace DAL.Models
         [Required]
         public int ProdcutQuantity { get; set; }
 
+
+        public virtual ICollection<Review> Reviews { get; set; }
+
+        public Product()
+        {
+            Reviews = new List<Review>();
+        }
     }
 }

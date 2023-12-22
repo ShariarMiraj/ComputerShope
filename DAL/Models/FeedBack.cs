@@ -10,7 +10,6 @@ namespace DAL.Models
 {
     public  class FeedBack
     {
-        [Key]
         public int Id { get; set; }
         [Required]
         public DateTime Date { get; set; }
@@ -19,7 +18,7 @@ namespace DAL.Models
         public string ReviewFeedBack { get; set; }
         [ForeignKey("Review")]
         public int Rid { get; set; }
-        
+
 
         public Review Review { get; set; }
     }

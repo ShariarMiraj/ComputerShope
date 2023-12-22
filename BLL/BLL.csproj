@@ -53,7 +53,9 @@
     <Compile Include="DTOs\ModeratorDTO.cs" />
     <Compile Include="DTOs\MSalaryDTO.cs" />
     <Compile Include="DTOs\ProductDTO.cs" />
+    <Compile Include="DTOs\ProductReviewDTO.cs" />
     <Compile Include="DTOs\ReviewDTO.cs" />
+    <Compile Include="DTOs\ReviewFeedBackDTO.cs" />
     <Compile Include="DTOs\SalaryDTO.cs" />
     <Compile Include="DTOs\TokenDTO.cs" />
     <Compile Include="DTOs\TopSearchSelleingproductDTO.cs" />
