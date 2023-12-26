@@ -175,20 +175,38 @@ namespace ComputerShope.Controllers
         }
 
         [HttpPost]
-        [Route("api/teacher/mail/{id}")]
-        public HttpResponseMessage Mail(int Id)
+        [Route("api/Moderator/send-salary-sheet-email/{Id}")]
+        public HttpResponseMessage SendSalarySheetEmail(int Id)
         {
-            try
-            {
+            var moderator = ModeratorService.Get(Id);
 
-                return Request.CreateResponse(HttpStatusCode.OK, EmailService.SendEmail(Id));
+            if (moderator != null)
+            {
+                try
+                {
+                    // Send email with salary sheet attachment
+                    bool emailResult = SendSalarySheetEmailService.SendSalEmail(Id);
+
+                    if (emailResult)
+                    {
+                        return Request.CreateResponse(HttpStatusCode.OK, "Salary sheet email sent successfully.");
+                    }
+                    else
+                    {
+                        // Handle the case where email sending fails
+                        return Request.CreateResponse(HttpStatusCode.InternalServerError, "Failed to send salary sheet email.");
+                    }
+                }
+                catch (Exception ex)
+                {
+                    return Request.CreateResponse(HttpStatusCode.BadRequest, ex.Message);
+                }
             }
-            catch (Exception ex)
+            else
             {
-
-                return Request.CreateResponse(HttpStatusCode.BadRequest, ex.Message);
-
+                return Request.CreateResponse(HttpStatusCode.NotFound);
             }
         }
+
     }
 }

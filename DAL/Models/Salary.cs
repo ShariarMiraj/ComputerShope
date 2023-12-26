@@ -22,5 +22,20 @@ namespace DAL.Models
         public virtual Moderator Moderator { get; set; }
 
 
+        public byte[] GenerateSalarySheet()
+        {
+
+          
+            // Your logic to generate the salary sheet data...
+            // Example:
+            // byte[] salarySheetData = SomeLogicToGenerateSalarySheet();
+            // return salarySheetData;
+
+            // Replace the above example with your actual logic
+            return new byte[] { /* Your generated salary sheet data */ };
+        }
+
+
+
     }
 }

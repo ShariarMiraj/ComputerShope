@@ -68,6 +68,7 @@
     <Compile Include="Services\ProductService.cs" />
     <Compile Include="Services\ReviewService.cs" />
     <Compile Include="Services\SalaryService.cs" />
+    <Compile Include="Services\SendSalarySheetEmailService.cs" />
     <Compile Include="Services\TopSearchSelleingproductService.cs" />
   </ItemGroup>
   <ItemGroup>
