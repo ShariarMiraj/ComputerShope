@@ -10,6 +10,12 @@ namespace DAL.Repos
 {
     internal class FeedBackRepo : Repo, IRepo<FeedBack, int, bool>
     {
+
+        public Dictionary<string, decimal> ReadForPieChart()
+        {
+            throw new NotImplementedException();
+        }
+
         public bool Create(FeedBack obj)
         {
             db.FeedBacks.Add(obj);

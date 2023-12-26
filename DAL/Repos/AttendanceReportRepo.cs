@@ -44,5 +44,10 @@ namespace DAL.Repos
                 return true;
             return false;
         }
+
+        public Dictionary<string, decimal> ReadForPieChart()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

@@ -10,6 +10,11 @@ namespace DAL.Repos
 {
     internal class TokenRepo : Repo, IRepo<Token, string, Token>
     {
+        public Dictionary<string, decimal> ReadForPieChart()
+        {
+            throw new NotImplementedException();
+        }
+
         public Token Create(Token obj)
         {
             db.Tokens.Add(obj);

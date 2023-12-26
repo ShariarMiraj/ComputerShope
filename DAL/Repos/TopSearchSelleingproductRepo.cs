@@ -10,7 +10,10 @@ namespace DAL.Repos
 {
     internal class TopSearchSelleingproductRepo : Repo, IRepo<TopSearchSelleingproduct, string, TopSearchSelleingproduct>
     {
-
+        public Dictionary<string, decimal> ReadForPieChart()
+        {
+            throw new NotImplementedException();
+        }
 
         public TopSearchSelleingproduct Create(TopSearchSelleingproduct obj)
         {

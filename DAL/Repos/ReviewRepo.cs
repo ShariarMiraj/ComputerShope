@@ -10,6 +10,11 @@ namespace DAL.Repos
 {
     internal class ReviewRepo : Repo, IRepo<Review, int, bool>
     {
+        public Dictionary<string, decimal> ReadForPieChart()
+        {
+            throw new NotImplementedException();
+        }
+
         public bool Create(Review obj)
         {
             db.Reviews.Add(obj);

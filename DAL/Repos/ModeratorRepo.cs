@@ -10,6 +10,11 @@ namespace DAL.Repos
 {
     internal class ModeratorRepo : Repo, IRepo<Moderator, int, bool> , IAuth<bool>  , IChange
     {
+        public Dictionary<string, decimal> ReadForPieChart()
+        {
+            throw new NotImplementedException();
+        }
+
         public bool Authenticate(string email, string password)
         {
             var data = db.Moderators.FirstOrDefault(u=>u.Email.Equals(email) &&

@@ -10,6 +10,11 @@ namespace DAL.Repos
 {
     internal class ProductRepo : Repo, IRepo<Product, int, bool>
     {
+        public Dictionary<string, decimal> ReadForPieChart()
+        {
+            throw new NotImplementedException();
+        }
+
         public bool Create(Product obj)
         {
             db.Products.Add(obj);

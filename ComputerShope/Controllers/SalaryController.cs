@@ -119,6 +119,25 @@ namespace ComputerShope.Controllers
 
             }
         }
+
+
+
+
+
+        [HttpGet]
+        [Route("api/salary/piechart")]
+        public HttpResponseMessage GetPieChartData()
+        {
+            try
+            {
+                var pieChartData = SalaryService.GetPieChartData();
+                return Request.CreateResponse(HttpStatusCode.OK, pieChartData);
+            }
+            catch (Exception ex)
+            {
+                return Request.CreateResponse(HttpStatusCode.InternalServerError, new { Message = ex.Message });
+            }
+        }
     }
     
  }

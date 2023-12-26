@@ -19,7 +19,8 @@ namespace DAL.Interfaces
         bool Delete(ID id);
 
 
-
+        // New method for reading pie chart data
+        Dictionary<string, decimal> ReadForPieChart();
 
 
     }
