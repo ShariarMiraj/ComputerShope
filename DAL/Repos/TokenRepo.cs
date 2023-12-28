@@ -40,7 +40,7 @@ namespace DAL.Repos
         public Token Update(Token obj)
         {
            var token = Read(obj.Tkey);
-            db.Entry(token).CurrentValues.SetValues(token);
+            db.Entry(token).CurrentValues.SetValues(obj);
             if(db.SaveChanges() > 0)
             return token;
             return null;

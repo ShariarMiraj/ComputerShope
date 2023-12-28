@@ -10,9 +10,12 @@ using System.Net.Http;
 using System.Runtime.InteropServices.WindowsRuntime;
 using System.Runtime.Remoting.Messaging;
 using System.Web.Http;
+using System.Web.Http.Cors;
 
 namespace ComputerShope.Controllers
 {
+
+    [EnableCors("*", "*", "*")]
     public class SalaryController : ApiController
     {
         [HttpGet]

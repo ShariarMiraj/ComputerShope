@@ -92,7 +92,59 @@ namespace BLL.Services
             return mapped;
         }
 
-        
+        /*public static List<PieChartItemDTO> GetPieChartData()
+        {
+            var pieChartData = DataAccessFactory.SalaryData().Read();
+            var cfg = new MapperConfiguration(c =>
+            {
+                c.CreateMap<KeyValuePair<string, decimal>, PieChartItemDTO>()
+                    .ForMember(dest => dest.Label, opt => opt.MapFrom(src => src.Key))
+                    .ForMember(dest => dest.Value, opt => opt.MapFrom(src => src.Value));
+            });
+
+            var mapper = new Mapper(cfg);
+
+            // Make sure pieChartData is a collection of KeyValuePair<string, decimal>
+            if (pieChartData is IEnumerable<KeyValuePair<string, decimal>> keyValuePairs)
+            {
+                var mapped = mapper.Map<List<PieChartItemDTO>>(keyValuePairs);
+                return mapped;
+            }
+            else
+            {
+                // Handle the case where pieChartData is not the expected type.
+                // You might log an error or throw an exception.
+                return null; // or throw new InvalidOperationException("Unexpected type");
+            }
+        }
+
+
+        public static List<PieChartItemDTO> GetPieChartData()
+        {
+            var pieChartData = DataAccessFactory.SalaryData().ReadForPieChart();
+
+            var cfg = new MapperConfiguration(c =>
+            {
+                c.CreateMap<KeyValuePair<string, decimal>, PieChartItemDTO>()
+                    .ForMember(dest => dest.Label, opt => opt.MapFrom(src => src.Key))
+                    .ForMember(dest => dest.Value, opt => opt.MapFrom(src => src.Value));
+            });
+
+            var mapper = new Mapper(cfg);
+
+            // Ensure pieChartData is a collection of KeyValuePair<string, decimal>
+            if (pieChartData is IEnumerable<KeyValuePair<string, decimal>> keyValuePairs)
+            {
+                var mapped = mapper.Map<List<PieChartItemDTO>>(keyValuePairs);
+                return mapped;
+            }
+            else
+            {
+                // Handle the case where pieChartData is not the expected type.
+                // You might log an error or throw an exception.
+                return new List<PieChartItemDTO>(); // or throw new InvalidOperationException("Unexpected type");
+            }
+        }*/
 
 
     }
