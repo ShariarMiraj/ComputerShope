@@ -47,7 +47,14 @@ namespace DAL.Repos
 
         public Dictionary<string, decimal> ReadForPieChart()
         {
-            throw new NotImplementedException();
+            return db.AttendanceReports
+                .GroupBy(a => new { a.EmployeeName, a.DateTime.Date }) // Group by EmployeeName and Date
+                .ToDictionary(
+                    g => $"{g.Key.EmployeeName} - {g.Key.Date.ToShortDateString()}",
+                    g => (decimal)g.Count() // Convert count to decimal
+                );
         }
+
+
     }
 }

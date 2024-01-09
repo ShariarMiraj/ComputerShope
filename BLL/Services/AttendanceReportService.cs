@@ -73,5 +73,24 @@ namespace BLL.Services
             return DataAccessFactory.AttendanceReportData().Delete(id);
         }
 
+        
+        public static List<AttendancePieChartDTO> GetAttendance()
+        {
+            var data = DataAccessFactory.AttendanceReportData().Read();
+            var cfg = new MapperConfiguration(c =>
+            {
+                c.CreateMap<AttendanceReport, AttendancePieChartDTO>()
+                    .ForMember(dest => dest.EmployeeName, opt => opt.MapFrom(src => src.EmployeeName))
+                    .ForMember(dest => dest.DateTime, opt => opt.MapFrom(src => src.DateTime.Date))
+                    .ForMember(dest => dest.Count, opt => opt.MapFrom(src => src.Count)); // Assuming each record represents one attendance
+
+            });
+
+            var mapper = new Mapper(cfg);
+            var mapped = mapper.Map<List<AttendancePieChartDTO>>(data);
+            return mapped;
+        }
+
+
     }
 }

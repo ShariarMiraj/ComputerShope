@@ -110,5 +110,20 @@ namespace ComputerShope.Controllers
             }
         }
 
+        [HttpGet]
+        [Route("api/attendance/piechart")]
+        public HttpResponseMessage GetPieChartData()
+        {
+            try
+            {
+                var pieChartData = AttendanceReportService.GetAttendance();
+                return Request.CreateResponse(HttpStatusCode.OK, pieChartData);
+            }
+            catch (Exception ex)
+            {
+                return Request.CreateResponse(HttpStatusCode.InternalServerError, new { Message = ex.Message });
+            }
+        }
+
     }
 }

@@ -16,6 +16,9 @@ namespace DAL.Models
         public string EmployeeName { get; set; }
         [Required]
         public DateTime DateTime { get; set; }
+
+        public int Count { get; set; }
+
         [ForeignKey("Moderator")]
         public int  MId { get; set; }
 

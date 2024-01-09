@@ -109,6 +109,10 @@
     <Compile Include="Migrations\202312221926261_AddProductICol.designer.cs">
       <DependentUpon>202312221926261_AddProductICol.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202401040448444_INitAttrnINcount.cs" />
+    <Compile Include="Migrations\202401040448444_INitAttrnINcount.designer.cs">
+      <DependentUpon>202401040448444_INitAttrnINcount.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AttendanceReport.cs" />
     <Compile Include="Models\FeedBack.cs" />
@@ -172,6 +176,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202312221926261_AddProductICol.resx">
       <DependentUpon>202312221926261_AddProductICol.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202401040448444_INitAttrnINcount.resx">
+      <DependentUpon>202401040448444_INitAttrnINcount.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
